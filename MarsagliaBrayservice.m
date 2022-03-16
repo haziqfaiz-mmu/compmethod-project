@@ -1,4 +1,4 @@
-function output = BoxMullerservice(n)
+function output=MarsagliaBrayservice(n)
     
     U1 = rand(1,n);
     U2 = rand(1,n);
@@ -7,14 +7,12 @@ function output = BoxMullerservice(n)
     
     X=[];
     Y=[];
-   
     
     for i=1:n
         X(i) = mod(floor(R(i)*cos(Theta(i))*100),100);
         Y(i) = mod(floor(R(i)*sin(Theta(i))*100),100);
-            if(Y(i)<0)
-                Y(i) = Y(i)*-1;
-            end
+            
     end
     
-    output = Y;
+   
+    output = X;

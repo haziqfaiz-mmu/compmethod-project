@@ -12,8 +12,8 @@ function output = BoxMullerarrival(n)
     Y(1) = 0;
     
     for i=2:n
-        X(i) = mod(R(i)*cos(Theta(i))*1000,1000);
-        Y(i) = mod(R(i)*sin(Theta(i))*1000,1000);
+        X(i) = mod(floor(R(i)*cos(Theta(i))*1000),1000);
+        Y(i) = mod(floor(R(i)*sin(Theta(i))*1000),1000);
             
     end
     
