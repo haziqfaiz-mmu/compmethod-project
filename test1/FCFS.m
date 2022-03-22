@@ -1,27 +1,18 @@
-function output = FCFS(processes, n, burstTime, arrivalTime)
+function output = FCFS()
     
-    waitingTime = [];
-    turnAroundTime= [];
-    tt_wt_array = [];
+    n = 5;
+    processes = 1:n;
+    %burstTime = BoxMullerservice(10);
+    %arrivalTime = BoxMullerarrival(10);
+    burstTime = [3,4,3,6,2];
+    interArrivalTime=[0,2,4,7,10];
+    convertBurstTime(burstTime,n);
+    arrivalTime =  convertArrivalTime(interArrivalTime,n)
     
-    %find the waitiing time of aal processes
-    findWaitingTime(processes,n,burstTime,waitingTime,arrivalTime);
     
-    printf('Waiting time = \n');
-    printf('%d ',waitingTime);
+    printf('Arrival time = \n');
+    printf('%d ',arrivalTime);
+    printf('Service time = \n');
+    printf('%d ',burstTime);
     
-    
-    %find the turn around time for all processes
-    findTurnAroundTime(processes,n, burstTime, waitingTime,turnAroundTime);
-    
-    printf('Turn around time = \n');
-    printf('%d ',turnAroundTime);
-   
-    printf('\n');
-    
-    %find the average time
-    tt_wt_array = findAvgTime(processes, n, burstTime, arrivalTime,waitingTime,turnAroundTime);
-    
-    printf('Average waiting time is %d\n',tt_wt_array(1));
-    printf('Average turn around time is %d\n',tt_wt_array(2));
-    
+    findAverage(processes,n,burstTime,arrivalTime);
